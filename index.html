@@ -1,13 +1,87 @@
 <!doctype html>
+<!-- 
+  Main HTML Document
+  
+  This is the single HTML file that serves as the entry point for the React application.
+  It provides the basic HTML structure and includes the necessary meta tags,
+  title, and mounting point for the React app.
+  
+  Key features:
+  - Responsive viewport configuration
+  - Favicon setup
+  - React app mounting point
+  - Module script loading
+-->
+
+<!-- HTML5 document type declaration -->
 <html lang="en">
   <head>
+    <!-- Character encoding - UTF-8 supports all Unicode characters -->
     <meta charset="UTF-8" />
+    
+    <!-- Favicon - small icon displayed in browser tab -->
+    <!-- Points to Vite's default favicon in the public directory -->
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    
+    <!-- Viewport meta tag for responsive design -->
+    <!-- Ensures proper scaling on mobile devices -->
+    <!-- width=device-width: use device's actual width -->
+    <!-- initial-scale=1.0: don't zoom in or out initially -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Page title displayed in browser tab and search results -->
     <title>PDF to Text Converter Application</title>
+    
+    <!-- Additional meta tags that could be added for SEO and social sharing:
+    
+    <meta name="description" content="Convert PDF documents to editable text with our modern web-based tool. Extract text from PDFs and export to multiple formats.">
+    <meta name="keywords" content="PDF converter, text extraction, PDF to text, document processing">
+    <meta name="author" content="Your Name">
+    
+    Open Graph tags for social media sharing:
+    <meta property="og:title" content="PDF to Text Converter">
+    <meta property="og:description" content="Convert PDF documents to editable text">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.com">
+    <meta property="og:image" content="https://your-domain.com/og-image.png">
+    
+    Twitter Card tags:
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PDF to Text Converter">
+    <meta name="twitter:description" content="Convert PDF documents to editable text">
+    <meta name="twitter:image" content="https://your-domain.com/twitter-image.png">
+    -->
   </head>
+  
   <body>
+    <!-- Root element where React application will be mounted -->
+    <!-- This div serves as the container for the entire React app -->
+    <!-- The id "root" is referenced in src/main.tsx -->
     <div id="root"></div>
+    
+    <!-- Main application script -->
+    <!-- type="module" enables ES6 module syntax (import/export) -->
+    <!-- src points to the TypeScript entry point -->
+    <!-- Vite will process this file and all its dependencies -->
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- 
+    Additional scripts that could be added:
+    
+    Analytics tracking:
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    
+    Error tracking:
+    <script src="https://browser.sentry-cdn.com/7.x.x/bundle.min.js"></script>
+    <script>
+      Sentry.init({ dsn: 'YOUR_DSN_HERE' });
+    </script>
+    -->
   </body>
 </html>

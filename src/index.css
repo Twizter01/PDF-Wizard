@@ -1,3 +1,166 @@
+/**
+ * Global CSS Styles
+ * 
+ * This file contains the global CSS for the PDF to Text Converter application.
+ * It imports Tailwind CSS utilities and can include custom global styles.
+ * 
+ * The file is imported in main.tsx and applies to the entire application.
+ */
+
+/* 
+ * Tailwind CSS Imports
+ * 
+ * These @tailwind directives import Tailwind's CSS layers:
+ * - base: Tailwind's base styles (normalize, default element styles)
+ * - components: Component classes (can be extended with custom components)
+ * - utilities: Utility classes (margins, padding, colors, etc.)
+ */
+
+/* Base layer - Tailwind's foundational styles */
 @tailwind base;
+
+/* Components layer - Reusable component styles */
 @tailwind components;
+
+/* Utilities layer - Single-purpose utility classes */
 @tailwind utilities;
+
+/*
+ * Custom Global Styles
+ * 
+ * Additional global styles can be added here.
+ * These styles will apply throughout the application.
+ * 
+ * Examples of what could be added:
+ */
+
+/*
+ * Custom CSS variables for consistent theming
+ * 
+ * :root {
+ *   --color-primary: #3b82f6;
+ *   --color-secondary: #6b7280;
+ *   --color-success: #10b981;
+ *   --color-warning: #f59e0b;
+ *   --color-error: #ef4444;
+ *   --font-family-primary: 'Inter', system-ui, sans-serif;
+ *   --border-radius-default: 0.5rem;
+ *   --shadow-default: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+ * }
+ */
+
+/*
+ * Custom component styles using Tailwind's @layer directive
+ * 
+ * @layer components {
+ *   .btn-primary {
+ *     @apply bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors;
+ *   }
+ *   
+ *   .card {
+ *     @apply bg-white rounded-lg shadow-md p-6;
+ *   }
+ *   
+ *   .input-field {
+ *     @apply border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent;
+ *   }
+ * }
+ */
+
+/*
+ * Custom utility classes
+ * 
+ * @layer utilities {
+ *   .text-gradient {
+ *     @apply bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent;
+ *   }
+ *   
+ *   .scrollbar-hide {
+ *     -ms-overflow-style: none;
+ *     scrollbar-width: none;
+ *   }
+ *   
+ *   .scrollbar-hide::-webkit-scrollbar {
+ *     display: none;
+ *   }
+ * }
+ */
+
+/*
+ * Global element styles
+ * 
+ * html {
+ *   scroll-behavior: smooth;
+ * }
+ * 
+ * body {
+ *   font-family: var(--font-family-primary);
+ *   line-height: 1.6;
+ * }
+ * 
+ * * {
+ *   box-sizing: border-box;
+ * }
+ */
+
+/*
+ * Print styles for better printing experience
+ * 
+ * @media print {
+ *   .no-print {
+ *     display: none !important;
+ *   }
+ *   
+ *   body {
+ *     font-size: 12pt;
+ *     line-height: 1.4;
+ *   }
+ *   
+ *   .page-break {
+ *     page-break-before: always;
+ *   }
+ * }
+ */
+
+/*
+ * Dark mode support (if implementing dark theme)
+ * 
+ * @media (prefers-color-scheme: dark) {
+ *   :root {
+ *     --color-bg: #1f2937;
+ *     --color-text: #f9fafb;
+ *     --color-border: #374151;
+ *   }
+ * }
+ * 
+ * .dark {
+ *   background-color: var(--color-bg);
+ *   color: var(--color-text);
+ * }
+ */
+
+/*
+ * Accessibility improvements
+ * 
+ * @media (prefers-reduced-motion: reduce) {
+ *   *,
+ *   *::before,
+ *   *::after {
+ *     animation-duration: 0.01ms !important;
+ *     animation-iteration-count: 1 !important;
+ *     transition-duration: 0.01ms !important;
+ *   }
+ * }
+ * 
+ * .sr-only {
+ *   position: absolute;
+ *   width: 1px;
+ *   height: 1px;
+ *   padding: 0;
+ *   margin: -1px;
+ *   overflow: hidden;
+ *   clip: rect(0, 0, 0, 0);
+ *   white-space: nowrap;
+ *   border: 0;
+ * }
+ */

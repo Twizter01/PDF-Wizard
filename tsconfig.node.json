@@ -1,22 +1,59 @@
+/**
+ * TypeScript Configuration for Node.js Build Tools
+ * 
+ * This configuration file handles TypeScript compilation for Node.js-based
+ * build tools and configuration files (like Vite config). It's separate
+ * from the app configuration to allow different settings for build tools.
+ */
+
 {
+  // Compiler options optimized for Node.js environment
   "compilerOptions": {
-    "target": "ES2022",
-    "lib": ["ES2023"],
-    "module": "ESNext",
-    "skipLibCheck": true,
-
-    /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "isolatedModules": true,
-    "moduleDetection": "force",
-    "noEmit": true,
-
-    /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    
+    // Target Node.js version
+    "target": "ES2022",                   // Modern Node.js features (Node 16+)
+                                          // Supports top-level await, class fields, etc.
+    
+    // Library definitions for Node.js
+    "lib": ["ES2023"],                    // Latest JavaScript standard library
+                                          // Includes newest language features
+    
+    // Module system for Node.js
+    "module": "ESNext",                   // Use ES modules (import/export)
+    "skipLibCheck": true,                 // Skip checking library declaration files
+                                          // Improves build performance
+    
+    /* Bundler mode settings */
+    "moduleResolution": "bundler",        // Use bundler-aware module resolution
+    "allowImportingTsExtensions": true,   // Allow importing TypeScript files directly
+    "isolatedModules": true,              // Each file must be independently transpilable
+    "moduleDetection": "force",           // Always treat files as modules
+    "noEmit": true,                       // Don't emit JavaScript (handled by build tools)
+    
+    /* Strict type checking for build tools */
+    "strict": true,                       // Enable all strict type checking
+    "noUnusedLocals": true,              // Error on unused variables
+    "noUnusedParameters": true,          // Error on unused parameters  
+    "noFallthroughCasesInSwitch": true   // Error on switch fallthrough
+    
+    // Strict settings help maintain code quality in build scripts:
+    // - Catch configuration errors early
+    // - Ensure build tools are properly typed
+    // - Prevent common Node.js scripting mistakes
   },
-  "include": ["vite.config.ts"]
+  
+  // Files to include in this configuration
+  "include": [
+    "vite.config.ts"    // Include Vite configuration file
+                        // Other build tool configs would be added here:
+                        // - "postcss.config.ts"
+                        // - "tailwind.config.ts" 
+                        // - Custom build scripts
+  ]
+  
+  // This separation allows:
+  // 1. Different TypeScript targets (app vs Node.js)
+  // 2. Different library definitions (DOM vs Node.js)
+  // 3. Independent compilation of build tools
+  // 4. Better IDE support for different contexts
 }

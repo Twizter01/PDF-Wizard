@@ -1,36 +1,89 @@
 {
-  "name": "vite-react-typescript-starter",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  // Package metadata
+  "name": "vite-react-typescript-starter",     // Package name (could be updated to reflect PDF converter)
+  "private": true,                             // Prevents accidental publishing to npm
+  "version": "0.0.0",                         // Semantic version number
+  "type": "module",                           // Use ES modules (import/export) instead of CommonJS
+  
+  // NPM scripts - commands that can be run with `npm run <script-name>`
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    // Development server - starts Vite dev server with hot reload
+    "dev": "vite",                            // Command: npm run dev
+                                              // Starts development server on http://localhost:5173
+    
+    // Production build - compiles TypeScript and bundles for production
+    "build": "vite build",                    // Command: npm run build
+                                              // Creates optimized build in dist/ directory
+    
+    // Code linting - checks code quality and style
+    "lint": "eslint .",                       // Command: npm run lint
+                                              // Runs ESLint on all files in project
+    
+    // Preview production build - serves the built files locally
+    "preview": "vite preview"                 // Command: npm run preview
+                                              // Serves dist/ directory for testing production build
   },
+  
+  // Production dependencies - required for the application to run
   "dependencies": {
-    "file-saver": "^2.0.5",
-    "html-docx-js": "^0.3.1",
-    "lucide-react": "^0.344.0",
-    "pdfjs-dist": "^4.10.38",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    // File download functionality
+    "file-saver": "^2.0.5",                  // Client-side file saving (export functionality)
+    
+    // Document processing (currently unused but available)
+    "html-docx-js": "^0.3.1",               // HTML to DOCX conversion library
+    
+    // UI icons
+    "lucide-react": "^0.344.0",             // Modern icon library with React components
+    
+    // PDF processing
+    "pdfjs-dist": "^4.10.38",               // PDF.js library for PDF parsing and text extraction
+    
+    // React framework
+    "react": "^18.3.1",                     // React library for building user interfaces
+    "react-dom": "^18.3.1"                  // React DOM rendering library
   },
+  
+  // Development dependencies - only needed during development and building
   "devDependencies": {
-    "@eslint/js": "^9.9.1",
-    "@types/react": "^18.3.5",
-    "@types/react-dom": "^18.3.0",
-    "@vitejs/plugin-react": "^4.3.1",
-    "autoprefixer": "^10.4.18",
-    "eslint": "^9.9.1",
-    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
-    "eslint-plugin-react-refresh": "^0.4.11",
-    "globals": "^15.9.0",
-    "postcss": "^8.4.35",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5.5.3",
-    "typescript-eslint": "^8.3.0",
-    "vite": "^5.4.2"
+    // ESLint and plugins for code quality
+    "@eslint/js": "^9.9.1",                 // Core ESLint JavaScript rules
+    "@types/react": "^18.3.5",              // TypeScript type definitions for React
+    "@types/react-dom": "^18.3.0",          // TypeScript type definitions for React DOM
+    "@vitejs/plugin-react": "^4.3.1",       // Vite plugin for React support
+    
+    // CSS processing
+    "autoprefixer": "^10.4.18",             // Automatically adds vendor prefixes to CSS
+    
+    // Linting and code quality
+    "eslint": "^9.9.1",                     // JavaScript/TypeScript linter
+    "eslint-plugin-react-hooks": "^5.1.0-rc.0",      // ESLint rules for React Hooks
+    "eslint-plugin-react-refresh": "^0.4.11",        // ESLint rules for React Fast Refresh
+    "globals": "^15.9.0",                   // Global variable definitions for ESLint
+    
+    // CSS framework and processing
+    "postcss": "^8.4.35",                   // CSS post-processor
+    "tailwindcss": "^3.4.1",               // Utility-first CSS framework
+    
+    // TypeScript support
+    "typescript": "^5.5.3",                 // TypeScript compiler
+    "typescript-eslint": "^8.3.0",          // ESLint integration for TypeScript
+    
+    // Build tool
+    "vite": "^5.4.2"                       // Fast build tool and development server
   }
+  
+  // Additional package.json fields that could be useful:
+  // 
+  // "description": "A modern PDF to text converter web application",
+  // "keywords": ["pdf", "text-extraction", "react", "typescript"],
+  // "author": "Your Name <your.email@example.com>",
+  // "license": "MIT",
+  // "repository": {
+  //   "type": "git",
+  //   "url": "https://github.com/username/pdf-to-text-converter"
+  // },
+  // "bugs": {
+  //   "url": "https://github.com/username/pdf-to-text-converter/issues"
+  // },
+  // "homepage": "https://github.com/username/pdf-to-text-converter#readme"
 }

@@ -1,7 +1,39 @@
+/**
+ * TypeScript Configuration Root
+ * 
+ * This is the root TypeScript configuration file for the PDF to Text Converter project.
+ * It uses TypeScript's "project references" feature to organize configuration
+ * into separate files for different parts of the build process.
+ * 
+ * This approach provides:
+ * - Separation of concerns between app code and build tools
+ * - Better performance through incremental compilation
+ * - Cleaner configuration management
+ */
+
 {
+  // No files are directly included in this root configuration
+  // All TypeScript files are handled by the referenced projects
   "files": [],
+  
+  // Project references - separate TypeScript configurations for different contexts
   "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
+    // Application code configuration
+    { 
+      "path": "./tsconfig.app.json"   // Configuration for React app source code
+                                      // Includes src/ directory and app-specific settings
+    },
+    
+    // Build tools configuration  
+    { 
+      "path": "./tsconfig.node.json"  // Configuration for Node.js build tools
+                                      // Includes Vite config and other build scripts
+    }
   ]
+  
+  // Benefits of this structure:
+  // 1. App code and build tools can have different TypeScript settings
+  // 2. Faster compilation through incremental builds
+  // 3. Better IDE support with context-aware type checking
+  // 4. Easier maintenance of complex TypeScript configurations
 }

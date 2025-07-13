@@ -1,24 +1,65 @@
+/**
+ * TypeScript Configuration for Application Code
+ * 
+ * This configuration file specifically handles TypeScript compilation
+ * for the React application source code. It's optimized for modern
+ * React development with strict type checking and latest ES features.
+ */
+
 {
+  // Compiler options - how TypeScript should process the code
   "compilerOptions": {
-    "target": "ES2020",
-    "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
-    "skipLibCheck": true,
-
-    /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "isolatedModules": true,
-    "moduleDetection": "force",
-    "noEmit": true,
-    "jsx": "react-jsx",
-
-    /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    
+    // Target JavaScript version for compilation output
+    "target": "ES2020",                    // Modern JavaScript features (2020)
+                                          // Supports optional chaining, nullish coalescing, etc.
+    
+    // Enable modern class field behavior
+    "useDefineForClassFields": true,      // Use standard class field semantics
+                                          // Important for React class components
+    
+    // Library definitions to include
+    "lib": [
+      "ES2020",        // Modern JavaScript APIs
+      "DOM",           // Browser DOM APIs (document, window, etc.)
+      "DOM.Iterable"   // Iterable DOM collections (NodeList, etc.)
+    ],
+    
+    // Module system configuration
+    "module": "ESNext",                   // Use latest ES module syntax
+    "skipLibCheck": true,                 // Skip type checking of declaration files
+                                          // Improves compilation performance
+    
+    /* Bundler mode settings - optimized for Vite */
+    "moduleResolution": "bundler",        // Use bundler-specific module resolution
+    "allowImportingTsExtensions": true,   // Allow importing .ts/.tsx files directly
+    "isolatedModules": true,              // Ensure each file can be transpiled independently
+    "moduleDetection": "force",           // Always treat files as modules
+    "noEmit": true,                       // Don't emit JavaScript files (Vite handles this)
+    "jsx": "react-jsx",                   // Use React 17+ JSX transform
+                                          // No need to import React in every file
+    
+    /* Strict type checking options */
+    "strict": true,                       // Enable all strict type checking options
+    "noUnusedLocals": true,              // Error on unused local variables
+    "noUnusedParameters": true,          // Error on unused function parameters
+    "noFallthroughCasesInSwitch": true   // Error on switch statement fallthrough
+    
+    // These strict settings help catch common errors:
+    // - Undefined variables and parameters
+    // - Implicit any types
+    // - Null/undefined access
+    // - Unreachable code
   },
-  "include": ["src"]
+  
+  // Files to include in compilation
+  "include": [
+    "src"    // Include all files in the src directory
+             // This covers all React components, utilities, and types
+  ]
+  
+  // Files are automatically discovered based on:
+  // - TypeScript/JavaScript files (.ts, .tsx, .js, .jsx)
+  // - Type definition files (.d.ts)
+  // - Files imported by included files
 }
